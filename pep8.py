@@ -209,6 +209,8 @@ def blank_lines(logical_line, blank_lines, indent_level, line_number,
         return # Don't expect blank lines before the first line
     if previous_logical.startswith('@'):
         return # Don't expect blank lines after function decorator
+    if previous_logical.startswith('#'):
+        return # Don't expect blank lines after comment
     if (logical_line.startswith('def ') or
         logical_line.startswith('class ') or
         logical_line.startswith('@')):

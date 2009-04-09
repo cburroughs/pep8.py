@@ -209,8 +209,6 @@ def blank_lines(logical_line, blank_lines, indent_level, line_number,
         return # Don't expect blank lines before the first line
     if previous_logical.startswith('@'):
         return # Don't expect blank lines after function decorator
-    if previous_logical.startswith('#'):
-        return # Don't expect blank lines after comment
     if (logical_line.startswith('def ') or
         logical_line.startswith('class ') or
         logical_line.startswith('@')):
@@ -637,8 +635,10 @@ class Checker:
             if token_type == tokenize.COMMENT:
                 source_line = token[4]
                 token_start = token[2][1]
-                if source_line[:token_start].strip() == '':
-                    self.blank_lines = 0
+                # Two blank lines + comments should be okay
+                if (source_line[:token_start].strip() == '' and
+                    self.blank_lines < 2):
+                        self.blank_lines = 0
         return self.file_errors
 
     def report_error(self, line_number, offset, text, check):

@@ -25,6 +25,10 @@ You can also look at the source code and change history online:
 
 http://trac.browsershots.org/browser/trunk/devtools/pep8/pep8.py
 
+NOTE: the browsershots svn repository seems down, an accessible version is
+found on github: http://github.com/cburroughs/pep8.py/tree/master
+
+
 Example usage and output
 ------------------------
 

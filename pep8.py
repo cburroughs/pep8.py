@@ -1009,7 +1009,6 @@ def print_statistics(prefix=''):
         print(line)
 
 
-
 def print_benchmark(elapsed):
     """
     Print benchmark numbers.

@@ -72,33 +72,31 @@ Or you can display how often each error was found::
 Quick help is available on the command line::
 
   $ pep8 -h
-  usage: pep8 [options] input ...
+  Usage: pep8.py [options] input ...
 
-  options:
+  Options:
     -h, --help           show this help message and exit
     -v, --verbose        print status messages, or debug with -vv
     -q, --quiet          report only file names, or nothing with -qq
-    --exclude=patterns   skip matches (default .svn,CVS,*.pyc,*.pyo)
-    --filename=patterns  only check matching files (e.g. *.py)
+    --exclude=patterns   exclude files or directories which match these comma
+                         separated patterns (default: .svn,CVS,.bzr,.hg,.git)
+    --filename=patterns  when parsing directories, only check filenames matching
+                         these comma separated patterns (default: *.py)
     --ignore=errors      skip errors and warnings (e.g. E4,W)
     --repeat             show all occurrences of the same error
     --show-source        show source code for each error
     --show-pep8          show text of PEP 8 for each error
     --statistics         count errors and warnings
+    --count              count total number of errors and warnings
     --benchmark          measure processing speed
     --testsuite=dir      run regression tests from dir
     --doctest            run doctest on myself
-
 
 Feedback
 --------
 
 Your feedback is more than welcome. Write email to
-johann@browsershots.org or post bugs and feature requests here:
-
-http://trac.browsershots.org/newticket?component=devtools
-
-As this seems down at the moment, the alternative is:
+johann@rocholl.net or post bugs and feature requests here:
 
 http://github.com/cburroughs/pep8.py/issues
 
@@ -106,19 +104,12 @@ http://github.com/cburroughs/pep8.py/issues
 Source download
 ---------------
 
-Officially, the file pep8.py (and a regression test suite) is available from
-the Browsershots subversion repository, under the Expat license:
+The source code is currently available on github. Fork away!
 
-http://svn.browsershots.org/trunk/devtools/pep8/
+http://github.com/cburroughs/pep8.py/
+http://github.com/jcrocholl/pep8/
 
-You can also look at the source code and change history online:
-
-http://trac.browsershots.org/browser/trunk/devtools/pep8/pep8.py
-
-**Current alternative location**. NOTE: the browsershots svn repository seems
-down, an accessible version is found on github.  This also includes some
-extra fixes and a ``setup.py``:
-
-http://github.com/cburroughs/pep8.py/tree/master
-
+(Yes it's lame two have two that are not forks of one another. At some
+point in the future it is hoped some git magic will clean this
+situating up.)
 
